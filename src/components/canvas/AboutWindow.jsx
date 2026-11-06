@@ -41,18 +41,11 @@ export default function AboutWindow() {
         </p>
       </div>
 
-      {/* Social / Proof Links */}
+      {/* Footer Status Note */}
       <div className="pt-2 flex items-center justify-between border-t border-inherit text-[11px]">
-        <a
-          href="https://www.instagram.com/p/DAOJtG7yxo8/"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => sounds.playClick()}
-          className="inline-flex items-center gap-1 text-rose-600 dark:text-rose-400 hover:underline font-semibold"
-        >
-          <span>📸 Wisuda Sempoa Level 10 (Instagram)</span>
-          <ExternalLink className="w-3 h-3" />
-        </a>
+        <span className="font-semibold text-stone-700 dark:text-stone-300">
+          📍 Palu, Sulawesi Tengah
+        </span>
 
         <span className="opacity-75 flex items-center gap-1 text-stone-600 dark:text-stone-400">
           <span>Target Umroh & Pulang Jawa</span>

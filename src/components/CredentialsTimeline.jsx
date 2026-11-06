@@ -24,9 +24,7 @@ const MILESTONES = [
     subtitle: 'Mental Arithmetic & Advanced Calculus Foundation',
     description: 'Menyelesaikan seluruh kurikulum Kumon Matematika hingga level tertinggi (Completer) dan menamatkan 10 level Sempoa aritmatika mental. Membentuk ketelitian numerik ekstrem, kecepatan kalkulasi intuitif, dan daya tahan fokus berpikir.',
     tags: ['Kumon Completer', 'Sempoa Lv.10', 'Mental Arithmetic'],
-    highlight: false,
-    link: 'https://www.instagram.com/p/DAOJtG7yxo8/',
-    linkText: 'Wisuda Pendidikan Mental Aritmatika (Sempoa)'
+    highlight: false
   }
 ];
 
