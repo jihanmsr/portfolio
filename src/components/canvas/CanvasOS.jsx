@@ -36,7 +36,6 @@ import NowWindow from './NowWindow';
 import CVWindow from './CVWindow';
 import ThemesWindow from './ThemesWindow';
 import ArcadeGame from './ArcadeGame';
-import CursorLamp from '../CursorLamp';
 
 export default function CanvasOS({ onExitToScroll }) {
   // Theme state
@@ -373,9 +372,6 @@ export default function CanvasOS({ onExitToScroll }) {
         backgroundSize: '24px 24px'
       }}
     >
-      {/* Interactive Cursor Spotlight Lamp */}
-      <CursorLamp isDark={curTheme.isDark} />
-
       {/* 1. TOP CONTROL BAR */}
       <header
         className="fixed top-0 left-0 right-0 z-50 h-14 px-4 flex items-center justify-between border-b backdrop-blur-md transition-colors"

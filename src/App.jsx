@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import CanvasOS from './components/canvas/CanvasOS';
 import CyberBackground from './components/CyberBackground';
-import CursorLamp from './components/CursorLamp';
 import HeroSection from './components/HeroSection';
 import TechStackTicker from './components/TechStackTicker';
 import ProjectsSection from './components/ProjectsSection';
@@ -22,11 +21,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#f5f3ec] text-stone-900 relative overflow-x-hidden font-sans">
-      {/* 1. Warm Editorial Paper Background with Lamp Raytracing */}
+      {/* 1. Warm Editorial Paper Background */}
       <CyberBackground />
-
-      {/* Interactive Cursor Spotlight Lamp */}
-      <CursorLamp isDark={false} />
 
       {/* 2. Top Navigation Bar */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#f5f3ec]/90 backdrop-blur-md border-b border-[#e2ddd0]">
