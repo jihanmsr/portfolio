@@ -50,10 +50,10 @@ export default function App() {
           <nav className="hidden md:flex items-center gap-6 text-xs font-semibold text-stone-600">
             <button
               onClick={() => setViewMode('canvas')}
-              className="text-amber-700 hover:text-amber-900 font-bold flex items-center gap-1.5 transition-colors group"
+              className="text-stone-800 hover:text-stone-950 font-bold flex items-center gap-1.5 transition-colors group"
             >
-              <LayoutGrid className="w-3.5 h-3.5 text-amber-600 group-hover:scale-110 transition-transform" />
-              <span>Canvas OS Mode</span>
+              <LayoutGrid className="w-3.5 h-3.5 text-stone-700 group-hover:scale-110 transition-transform" />
+              <span>Mode Kanvas</span>
             </button>
             <a href="#tech-stack" className="hover:text-stone-950 transition-colors">Tech Stack</a>
             <a href="#projects" className="hover:text-stone-950 transition-colors">Studi Kasus</a>
@@ -68,7 +68,7 @@ export default function App() {
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs transition-all shadow-sm"
             >
               <LayoutGrid className="w-3.5 h-3.5 text-amber-300" />
-              <span>Buka Canvas OS</span>
+              <span>Mode Kanvas</span>
             </button>
             <a
               href="https://wa.me/6289644327893?text=Halo%20Mbak%20Jihan,%20saya%20tertarik%20berdiskusi%20mengenai%20proyek%20Anda."

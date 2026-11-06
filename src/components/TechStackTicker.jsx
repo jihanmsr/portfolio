@@ -1,202 +1,186 @@
 import React, { useState } from 'react';
 import { 
-  Code2, 
   Database, 
   Terminal, 
   Palette, 
-  FileSpreadsheet, 
-  GitBranch, 
-  Sparkles,
+  Cpu,
   Layers,
-  Cpu
+  Code2,
+  CheckCircle2,
+  Sparkles
 } from 'lucide-react';
 
-const TECH_LANGUAGES = [
+const TECH_CATEGORIES = [
   {
-    name: 'Python',
-    category: 'data',
-    level: 'Advanced',
-    icon: '🐍',
-    desc: 'Data Analysis, Pandas, NumPy, Scraper, Automation, ETL',
-    tags: ['Pandas', 'NumPy', 'EDA', 'Scraping']
+    id: 'data',
+    title: 'Data Analytics & Statistik',
+    icon: Database,
+    accent: 'bg-emerald-500/10 text-emerald-900 border-emerald-300',
+    skills: [
+      {
+        name: 'Python',
+        icon: '🐍',
+        level: 'Advanced',
+        focus: 'Data Analysis, Pandas, NumPy, Scraper, ETL'
+      },
+      {
+        name: 'R Statistics',
+        icon: '📊',
+        level: 'Advanced',
+        focus: 'Pemodelan Statistik, Ekonometrika, ggplot2'
+      },
+      {
+        name: 'SQL (PostgreSQL / MySQL)',
+        icon: '🗄️',
+        level: 'Advanced',
+        focus: 'Relational Joins, Window Functions, Agregasi'
+      },
+      {
+        name: 'SPSS',
+        icon: '📈',
+        level: 'Expert',
+        focus: 'Uji Validitas, Reliabilitas, Regresi Terapan'
+      }
+    ]
   },
   {
-    name: 'R Statistics',
-    category: 'data',
-    level: 'Advanced',
-    icon: '📊',
-    desc: 'Pemodelan Statistik, Uji Hipotesis, Ekonometrika, ggplot2',
-    tags: ['ggplot2', 'Regression', 'ANOVA', 'Time Series']
+    id: 'web',
+    title: 'Web, Otomasi & AI',
+    icon: Terminal,
+    accent: 'bg-amber-500/10 text-amber-900 border-amber-300',
+    skills: [
+      {
+        name: 'JavaScript / Node.js',
+        icon: '⚡',
+        level: 'Proficient',
+        focus: 'Full-Stack Web, CDP Browser Automation'
+      },
+      {
+        name: 'Next.js & React 19',
+        icon: '⚛️',
+        level: 'Production',
+        focus: 'App Router, Integrasi AI Gemini, Prisma'
+      },
+      {
+        name: 'Tailwind CSS',
+        icon: '🌊',
+        level: 'Expert',
+        focus: 'Responsive Layout, Glassmorphism, UI Grid'
+      },
+      {
+        name: 'PHP',
+        icon: '🐘',
+        level: 'Proficient',
+        focus: 'Backend REST API, Server-Side Endpoints'
+      }
+    ]
   },
   {
-    name: 'SQL (PostgreSQL / MySQL)',
-    category: 'data',
-    level: 'Advanced',
-    icon: '🗄️',
-    desc: 'Komputasi Agregasi Database, Relational Joins, Window Functions',
-    tags: ['PostgreSQL', 'MySQL', 'Complex Queries']
-  },
-  {
-    name: 'JavaScript / Node.js',
-    category: 'web',
-    level: 'Proficient',
-    icon: '⚡',
-    desc: 'Full-Stack Web, CDP Browser Automation, Interactive Dashboards',
-    tags: ['ES6+', 'Node.js', 'Vite', 'React']
-  },
-  {
-    name: 'PHP',
-    category: 'web',
-    level: 'Proficient',
-    icon: '🐘',
-    desc: 'Backend Endpoint API, Server-Side Uploads, Database Handlers',
-    tags: ['REST API', 'File Upload', 'Backend Logic']
-  },
-  {
-    name: 'C / C++',
-    category: 'core',
-    level: 'Academic Core',
-    icon: '⚙️',
-    desc: 'Fondasi Algoritma, Alokasi Memori, Komputasi Statistik STIS',
-    tags: ['Algorithms', 'Data Structures', 'STIS Curriculum']
-  },
-  {
-    name: 'SPSS',
-    category: 'data',
-    level: 'Expert',
-    icon: '📈',
-    desc: 'Uji Validitas, Reliabilitas, Regresi Linear/Berganda, Olah Data Riset',
-    tags: ['Skripsi', 'Validitas', 'Reliabilitas', 'Statistik']
-  },
-  {
-    name: 'Figma UI/UX',
-    category: 'design',
-    level: 'Expert',
-    icon: '🎨',
-    desc: 'Desain Antarmuka, Design System, Usability Testing, Skripsi Redesign',
-    tags: ['UI/UX', 'Wireframe', 'Design System', 'Prototyping']
-  },
-  {
-    name: 'Canva Pro',
-    category: 'design',
-    level: 'Expert',
-    icon: '✨',
-    desc: 'Desain Komunikasi Visual, Infografis Data Publik, Presentasi Eksekutif',
-    tags: ['Infografis', 'Visual Design', 'Executive Slides']
-  },
-  {
-    name: 'Next.js & React 19',
-    category: 'web',
-    level: 'Production',
-    icon: '⚛️',
-    desc: 'Server Components, App Router, Integrasi AI Gemini, MariaDB/Prisma',
-    tags: ['Next.js 16', 'React 19', 'Full-Stack', 'Prisma']
-  },
-  {
-    name: 'Tailwind CSS',
-    category: 'web',
-    level: 'Expert',
-    icon: '🌊',
-    desc: 'Responsive Design, Clean Micro-interactions, Glassmorphism, CSS Grid',
-    tags: ['Tailwind', 'Responsive', 'Modern UI']
-  },
-  {
-    name: 'Git & GitHub',
-    category: 'core',
-    level: 'Daily Tool',
-    icon: '🐙',
-    desc: 'Version Control, Collaborative Repositories, Automated Deployment',
-    tags: ['Git', 'GitHub', 'CI/CD Workflow']
+    id: 'design',
+    title: 'UI/UX Desain & Workflow',
+    icon: Palette,
+    accent: 'bg-purple-500/10 text-purple-900 border-purple-300',
+    skills: [
+      {
+        name: 'Figma UI/UX',
+        icon: '🎨',
+        level: 'Expert',
+        focus: 'Design System, Wireframe, Usability Testing'
+      },
+      {
+        name: 'Canva Pro',
+        icon: '✨',
+        level: 'Expert',
+        focus: 'Visual Communication, Publikasi Data BPS'
+      },
+      {
+        name: 'Git & GitHub',
+        icon: '🐙',
+        level: 'Daily Tool',
+        focus: 'Version Control, GitHub Actions CI/CD'
+      },
+      {
+        name: 'C / C++',
+        icon: '⚙️',
+        level: 'Academic Core',
+        focus: 'Fondasi Struktur Data & Algoritma STIS'
+      }
+    ]
   }
 ];
 
 export default function TechStackTicker() {
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const filtered = activeFilter === 'all' 
-    ? TECH_LANGUAGES 
-    : TECH_LANGUAGES.filter(t => t.category === activeFilter);
-
   return (
-    <section className="relative z-10 py-16 px-6 max-w-6xl mx-auto" id="tech-stack">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+    <section className="relative z-10 py-14 px-6 max-w-6xl mx-auto" id="tech-stack">
+      {/* Section Header - Formal & Ringkas */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-[#e2ddd0] pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200 border border-stone-300 text-stone-800 text-xs font-mono font-semibold tracking-wider uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-stone-200/80 border border-stone-300 text-stone-800 text-[11px] font-mono font-semibold tracking-wider uppercase mb-2">
             <Cpu className="w-3.5 h-3.5 text-stone-700" />
-            Bahasa Pemrograman & Alat Analisis
+            <span>Keahlian & Alat Kerja Teknis</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight">
-            Tech Stack & Bahasa yang Digunakan
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">
+            Tech Stack & Instrumen Analisis
           </h2>
-          <p className="text-stone-600 mt-2 text-sm md:text-base max-w-xl">
-            Bahasa pemrograman dan ekosistem software yang saya gunakan untuk pemecahan masalah data, desain antarmuka, hingga otomasi sistem.
-          </p>
         </div>
-
-        {/* Filter Pills */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white border border-[#e2ddd0] shadow-xs self-start md:self-auto overflow-x-auto max-w-full">
-          {[
-            { id: 'all', label: 'Semua (12)' },
-            { id: 'data', label: 'Data & Statistik' },
-            { id: 'web', label: 'Web & Otomasi' },
-            { id: 'design', label: 'UI/UX Desain' }
-          ].map(f => (
-            <button
-              key={f.id}
-              onClick={() => setActiveFilter(f.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
-                activeFilter === f.id
-                  ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
-              }`}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
+        <p className="text-stone-600 text-xs sm:text-sm max-w-md md:text-right leading-relaxed font-normal">
+          Instrumen komputasi dan metodologi yang diaplikasikan untuk riset data statistik, rekayasa otomasi web, serta perancangan produk digital.
+        </p>
       </div>
 
-      {/* Grid of Tech Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filtered.map((item) => (
-          <div
-            key={item.name}
-            className="group relative p-5 rounded-2xl bg-white border border-[#e2ddd0] shadow-xs hover:border-stone-400 hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-start justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl p-2 rounded-xl bg-stone-50 border border-stone-200 group-hover:scale-110 transition-transform">
-                    {item.icon}
-                  </span>
-                  <div>
-                    <h3 className="text-base font-bold text-stone-900 group-hover:text-amber-800 transition-colors">
-                      {item.name}
+      {/* Compact Bento Grid: 3 Clean Columns */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {TECH_CATEGORIES.map((cat) => {
+          const Icon = cat.icon;
+          return (
+            <div
+              key={cat.id}
+              className="p-5 rounded-2xl bg-white border border-[#e2ddd0] shadow-xs flex flex-col justify-between hover:border-stone-400 transition-all"
+            >
+              <div>
+                {/* Column Header */}
+                <div className="flex items-center justify-between pb-3 mb-3 border-b border-stone-100">
+                  <div className="flex items-center gap-2.5">
+                    <div className="p-1.5 rounded-lg bg-stone-100 text-stone-800">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h3 className="text-sm font-bold text-stone-900 tracking-tight">
+                      {cat.title}
                     </h3>
-                    <span className="text-[11px] font-mono text-stone-500 font-medium">
-                      {item.level}
-                    </span>
                   </div>
+                  <span className="text-[10px] font-mono text-stone-400 font-semibold">
+                    4 Tools
+                  </span>
+                </div>
+
+                {/* Skills List in Compact Rows */}
+                <div className="space-y-2.5">
+                  {cat.skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="p-2.5 rounded-xl bg-stone-50/70 border border-stone-200/70 hover:bg-stone-100/80 hover:border-stone-300 transition-colors"
+                    >
+                      <div className="flex items-center justify-between mb-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm">{skill.icon}</span>
+                          <span className="text-xs font-bold text-stone-900">
+                            {skill.name}
+                          </span>
+                        </div>
+                        <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-white border border-stone-200 text-stone-700">
+                          {skill.level}
+                        </span>
+                      </div>
+                      <div className="text-[11px] text-stone-600 pl-6 leading-tight">
+                        {skill.focus}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-
-              <p className="text-stone-600 text-xs leading-relaxed mb-4">
-                {item.desc}
-              </p>
             </div>
-
-            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
-              {item.tags.map(tag => (
-                <span
-                  key={tag}
-                  className="px-2 py-0.5 rounded text-[10px] font-mono bg-stone-100 text-stone-700 border border-stone-200"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

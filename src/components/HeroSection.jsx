@@ -39,10 +39,10 @@ export default function HeroSection({ onOpenCanvas }) {
         {onOpenCanvas && (
           <button
             onClick={onOpenCanvas}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white hover:bg-stone-50 border border-stone-300 hover:border-stone-900 text-stone-900 text-xs font-bold shadow-xs transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white hover:bg-stone-50 border border-stone-300 hover:border-stone-800 text-stone-800 text-xs font-semibold shadow-xs transition-all hover:scale-105"
           >
-            <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-            <span>Buka Canvas OS Interaktif (Highly Recommended)</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+            <span>Mode Kanvas Interaktif (Desktop)</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
         )}
@@ -79,7 +79,7 @@ export default function HeroSection({ onOpenCanvas }) {
                 onClick={onOpenCanvas}
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-amber-100 hover:bg-amber-200 border border-amber-300 text-amber-950 font-bold text-sm transition-all"
               >
-                <span>Buka Versi Kanvas OS</span>
+                <span>Buka Mode Kanvas</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             )}
