@@ -27,7 +27,7 @@ export default function AboutWindow() {
       </p>
 
       <p className="text-stone-800 dark:text-stone-200">
-        Fondasi logika kuantitatif saya terbentuk sejak dini melalui pelatihan <strong className="text-amber-600 dark:text-amber-400 font-bold">Mental Aritmatika (Sempoa) hingga wisuda Level 10</strong> dan menyelesaikan kurikulum <strong className="text-indigo-600 dark:text-indigo-400 font-bold">Kumon Completer</strong>. Ketajaman analitis ini kemudian mengantarkan saya diterima di <strong className="font-semibold text-stone-900 dark:text-stone-100">FMIPA Matematika Universitas Indonesia (UI)</strong> dan <strong className="font-semibold text-stone-900 dark:text-stone-100">Pendidikan Dokter Gigi (FKG) Universitas Jember</strong> sebelum mantap memilih ikatan dinas Politeknik Statistika STIS.
+        Fondasi logika kuantitatif saya terbentuk sejak dini melalui pelatihan <strong className="text-amber-600 dark:text-amber-400 font-bold">Mental Aritmatika (Sempoa Level 10)</strong> dan menyelesaikan kurikulum <strong className="text-indigo-600 dark:text-indigo-400 font-bold">Kumon Completer</strong>. Ketajaman analitis ini kemudian mengantarkan saya diterima di <strong className="font-semibold text-stone-900 dark:text-stone-100">FMIPA Matematika UI (SIMAK UI)</strong> serta <strong className="font-semibold text-stone-900 dark:text-stone-100">Pendidikan Dokter Gigi UNEJ (SBMPTN/UTBK)</strong> sebelum akhirnya memantapkan pilihan di ikatan dinas Politeknik Statistika STIS.
       </p>
 
       {/* Keunggulan Utama Box */}

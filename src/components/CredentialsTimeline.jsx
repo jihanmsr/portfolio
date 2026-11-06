@@ -11,11 +11,11 @@ const MILESTONES = [
     highlight: true
   },
   {
-    period: 'Seleksi Bersama PTN Favorit',
-    title: 'Keterima FMIPA Matematika UI & FKG Universitas Jember',
-    subtitle: 'Universitas Indonesia (UI) & Universitas Jember (UNEJ)',
-    description: 'Lolos dalam ujian seleksi masuk perguruan tinggi negeri pada jurusan sains-matematika murni Universitas Indonesia serta Kedokteran Gigi (FKG) UNEJ, membuktikan daya penalaran kuantitatif dan dedikasi belajar tinggi.',
-    tags: ['FMIPA UI', 'Kedokteran Gigi UNEJ', 'Seleksi Nasional'],
+    period: 'Seleksi Masuk PTN (2021)',
+    title: 'Diterima di FMIPA Matematika UI & FKG Universitas Jember',
+    subtitle: 'Universitas Indonesia (SIMAK UI) • Universitas Jember (SBMPTN / UTBK)',
+    description: 'Dinyatakan lolos dan diterima pada program studi S1 Matematika FMIPA Universitas Indonesia melalui jalur seleksi SIMAK UI, serta S1 Pendidikan Dokter Gigi (FKG) Universitas Jember melalui jalur SBMPTN/UTBK, sebelum akhirnya memutuskan mengambil beasiswa penuh ikatan dinas di Politeknik Statistika STIS.',
+    tags: ['SIMAK UI (Matematika)', 'SBMPTN UTBK (FKG UNEJ)', 'Sains & Kesehatan'],
     highlight: false
   },
   {

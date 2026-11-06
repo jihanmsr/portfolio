@@ -57,7 +57,7 @@ const SERVICES = [
     icon: <GraduationCap className="w-6 h-6 text-amber-700" />,
     title: 'Private Tutoring Matematika & Kedinasan',
     badge: 'Matematika Sekolah & Ujian Masuk',
-    desc: 'Bimbingan intensif matematika dengan metode penalaran cepat dan pondasi konsep logika yang kokoh. Dibimbing langsung oleh Kumon Completer, peraih Sempoa Level 10, dan alumnus yang lolos seleksi Polstat STIS, UI Matematika, serta FKG UNEJ.',
+    desc: 'Bimbingan intensif matematika dengan pendekatan pemahaman konsep yang terstruktur dan analitis. Dibimbing langsung oleh lulusan Polstat STIS yang juga diterima di FMIPA Matematika UI (SIMAK UI) dan FKG UNEJ (SBMPTN/UTBK), serta peraih Kumon Completer & Sempoa Level 10.',
     points: [
       'Matematika SD, SMP, SMA (Kurikulum Nasional)',
       'Aritmatika Cepat & Logika Numerik',
