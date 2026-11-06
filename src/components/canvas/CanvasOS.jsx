@@ -429,9 +429,11 @@ export default function CanvasOS({ onExitToScroll }) {
 
         {/* Center Name Badge */}
         <div className="hidden lg:flex items-center gap-2">
-          <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-amber-400 to-indigo-600 flex items-center justify-center text-white font-extrabold text-xs shadow-sm">
-            JM
-          </div>
+          <img
+            src="./jihan_logo_square.png"
+            alt="Jihan Maisaroh"
+            className="w-7 h-7 rounded-lg object-contain border border-stone-300 shadow-xs bg-[#f7eac7]"
+          />
           <div className="text-left">
             <div className="font-bold text-xs tracking-tight">Jihan Maisaroh, S.Tr.Stat.</div>
             <div className="text-[10px] opacity-65 font-mono">Polstat STIS • Palu, Indonesia</div>
@@ -545,10 +547,12 @@ export default function CanvasOS({ onExitToScroll }) {
       <main className="relative min-w-[1450px] min-h-[1100px] pt-16 pb-40">
         {/* Canvas Center Hero Anchor (Visible like Kevin Mathew's Site!) */}
         <div className="absolute top-[280px] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto select-none z-0 px-4">
-          <div className="w-20 h-20 rounded-full mx-auto mb-3 bg-gradient-to-tr from-amber-400 via-rose-400 to-indigo-500 p-1 shadow-xl flex items-center justify-center">
-            <div className="w-full h-full rounded-full bg-white dark:bg-stone-900 flex items-center justify-center font-extrabold text-2xl text-stone-900 dark:text-stone-100 shadow-inner">
-              JM
-            </div>
+          <div className="w-20 h-20 rounded-2xl mx-auto mb-3 p-1 shadow-lg flex items-center justify-center bg-white border border-[#e2ddd0]">
+            <img
+              src="./jihan_logo_square.png"
+              alt="Jihan Maisaroh Logo"
+              className="w-full h-full rounded-xl object-contain bg-[#f7eac7]"
+            />
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2 text-stone-900 dark:text-stone-100">
             Jihan Maisaroh

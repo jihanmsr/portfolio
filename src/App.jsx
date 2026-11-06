@@ -33,9 +33,11 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Brand Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl bg-stone-900 text-amber-300 flex items-center justify-center font-extrabold text-sm shadow-sm group-hover:scale-105 transition-transform">
-              JM
-            </div>
+            <img
+              src="./jihan_logo_square.png"
+              alt="Jihan Maisaroh Logo"
+              className="w-9 h-9 rounded-xl object-contain shadow-xs border border-[#e2ddd0] group-hover:scale-105 transition-transform bg-[#f7eac7]"
+            />
             <div>
               <div className="font-bold text-stone-900 text-sm tracking-tight group-hover:text-amber-800 transition-colors">
                 Jihan Maisaroh
