@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CanvasOS from './components/canvas/CanvasOS';
 import CyberBackground from './components/CyberBackground';
+import CursorLight from './components/CursorLight';
 import HeroSection from './components/HeroSection';
 import TechStackTicker from './components/TechStackTicker';
 import ProjectsSection from './components/ProjectsSection';
@@ -23,6 +24,9 @@ export default function App() {
     <div className="min-h-screen bg-[#f5f3ec] text-stone-900 relative overflow-x-hidden font-sans">
       {/* 1. Warm Editorial Paper Background */}
       <CyberBackground />
+
+      {/* 2. Soft Ambient Cursor Studio Spotlight (Pure light, no ugly blobs) */}
+      <CursorLight />
 
       {/* 2. Top Navigation Bar */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#f5f3ec]/90 backdrop-blur-md border-b border-[#e2ddd0]">

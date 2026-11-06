@@ -18,8 +18,8 @@ export default function CyberBackground() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Mouse coordinates
-    let mouse = { x: null, y: null, radius: 120 };
+    // Mouse coordinates with smooth lerp
+    let mouse = { x: null, y: null };
     const handleMouseMove = (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -28,38 +28,59 @@ export default function CyberBackground() {
       mouse.x = null;
       mouse.y = null;
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     window.addEventListener('mouseleave', handleMouseLeave);
 
     // Subtle graph nodes
-    const particleCount = Math.min(45, Math.floor((width * height) / 28000));
+    const particleCount = Math.min(42, Math.floor((width * height) / 28000));
     const particles = [];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.5 + 1.2
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        radius: Math.random() * 1.4 + 1.1
       });
     }
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
+      const isDark = document.documentElement.classList.contains('dark');
 
-      // Draw subtle grid dots (Graph Paper Aesthetic)
+      // 1. Grid dots with gentle, seamless proximity illumination (No harsh edges)
       const dotSpacing = 28;
-      ctx.fillStyle = '#e2ded4';
+      const defaultDotColor = isDark ? '#1e293b' : '#e2ded4';
+
       for (let x = 14; x < width; x += dotSpacing) {
         for (let y = 14; y < height; y += dotSpacing) {
+          let dotRadius = 1;
+          let dotColor = defaultDotColor;
+
+          if (mouse.x !== null && mouse.y !== null) {
+            const dx = x - mouse.x;
+            const dy = y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            // Subtle 100px reactive zone with smooth quadratic easing
+            if (dist < 100) {
+              const factor = Math.pow(1 - dist / 100, 2);
+              dotRadius = 1 + factor * 0.5;
+              dotColor = isDark
+                ? `rgba(148, 163, 184, ${0.25 + factor * 0.5})`
+                : `rgba(120, 113, 108, ${0.3 + factor * 0.45})`;
+            }
+          }
+
           ctx.beginPath();
-          ctx.arc(x, y, 1, 0, Math.PI * 2);
+          ctx.arc(x, y, dotRadius, 0, Math.PI * 2);
+          ctx.fillStyle = dotColor;
           ctx.fill();
         }
       }
 
-      // Draw subtle floating nodes & links
+      // 2. Floating constellation nodes & delicate connections
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         p.x += p.vx;
@@ -70,19 +91,41 @@ export default function CyberBackground() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(168, 162, 158, 0.4)';
+        ctx.fillStyle = isDark ? 'rgba(148, 163, 184, 0.45)' : 'rgba(168, 162, 158, 0.45)';
         ctx.fill();
 
+        // Connect particle to mouse if close (subtle hairline)
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - p.x;
+          const dy = mouse.y - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 100) {
+            const intensity = 1 - dist / 100;
+            ctx.beginPath();
+            ctx.strokeStyle = isDark
+              ? `rgba(148, 163, 184, ${intensity * 0.25})`
+              : `rgba(120, 113, 108, ${intensity * 0.25})`;
+            ctx.lineWidth = 0.6;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+
+        // Connect node to node
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 110) {
+          if (dist < 100) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(168, 162, 158, ${(1 - dist / 110) * 0.15})`;
-            ctx.lineWidth = 0.7;
+            ctx.strokeStyle = isDark
+              ? `rgba(148, 163, 184, ${(1 - dist / 100) * 0.15})`
+              : `rgba(168, 162, 158, ${(1 - dist / 100) * 0.18})`;
+            ctx.lineWidth = 0.6;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.stroke();
