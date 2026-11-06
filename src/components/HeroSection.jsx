@@ -147,37 +147,6 @@ export default function HeroSection({ onOpenCanvas }) {
           </div>
         </div>
       </div>
-
-      {/* Bento Stats Row: Sleek Futuristic Cyber Panels */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-slate-800/80">
-        <div className="group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.2)] transition-all">
-          <div className="text-3xl font-black font-mono bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform origin-left">
-            STIS '25
-          </div>
-          <div className="text-xs text-slate-400 mt-1.5 font-medium">Komputasi Statistik & SI</div>
-        </div>
-
-        <div className="group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl hover:border-violet-500/50 hover:shadow-[0_0_25px_rgba(139,92,246,0.2)] transition-all">
-          <div className="text-3xl font-black font-mono bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform origin-left">
-            10+ Level
-          </div>
-          <div className="text-xs text-slate-400 mt-1.5 font-medium">Kumon & Sempoa Tamat</div>
-        </div>
-
-        <div className="group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl hover:border-emerald-500/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.2)] transition-all">
-          <div className="text-3xl font-black font-mono bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform origin-left">
-            End-to-End
-          </div>
-          <div className="text-xs text-slate-400 mt-1.5 font-medium">Olah Data s.d Figma UI/UX</div>
-        </div>
-
-        <div className="group p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-xl hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.2)] transition-all">
-          <div className="text-3xl font-black font-mono bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform origin-left">
-            100%
-          </div>
-          <div className="text-xs text-slate-400 mt-1.5 font-medium">Presisi Data & Metodologi</div>
-        </div>
-      </div>
     </section>
   );
 }
