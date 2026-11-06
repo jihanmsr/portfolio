@@ -39,7 +39,7 @@ import ArcadeGame from './ArcadeGame';
 
 export default function CanvasOS({ onExitToScroll }) {
   // Theme state
-  const [theme, setTheme] = useState('cream'); // 'cream' | 'catppuccin-latte' | 'tokyo-night' | 'dracula' | 'nord' | 'gruvbox-dark'
+  const [theme, setTheme] = useState('tokyo-night'); // 'cream' | 'catppuccin-latte' | 'tokyo-night' | 'dracula' | 'nord' | 'gruvbox-dark'
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [ambientPlaying, setAmbientPlaying] = useState(false);
   const [soundMenuOpen, setSoundMenuOpen] = useState(false);

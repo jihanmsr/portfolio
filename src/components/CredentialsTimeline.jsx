@@ -34,32 +34,32 @@ export default function CredentialsTimeline() {
   return (
     <section className="relative z-10 py-20 px-6 max-w-4xl mx-auto" id="credentials">
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200 border border-stone-300 text-stone-800 text-xs font-mono font-semibold tracking-wider uppercase mb-3">
-          <Award className="w-3.5 h-3.5 text-stone-700" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-mono font-semibold tracking-wider uppercase mb-3">
+          <Award className="w-3.5 h-3.5 text-violet-400" />
           Kredibilitas & Rekam Jejak
         </div>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight">
-          Fondasi Akademik & Kredensial
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+          Fondasi Akademik & <span className="bg-gradient-to-r from-violet-400 via-pink-300 to-cyan-300 bg-clip-text text-transparent">Kredensial</span>
         </h2>
-        <p className="text-stone-600 mt-2 text-sm md:text-base">
+        <p className="text-slate-400 mt-2 text-sm md:text-base">
           Rekam jejak konsistensi belajar, logika matematika disiplin tinggi, dan integritas pengolahan data.
         </p>
       </div>
 
-      <div className="relative border-l-2 border-stone-300 ml-4 md:ml-8 space-y-10">
+      <div className="relative border-l-2 border-slate-800 ml-4 md:ml-8 space-y-10">
         {MILESTONES.map((m, idx) => (
           <div key={idx} className="relative pl-6 md:pl-8 group">
-            {/* Timeline Dot */}
+            {/* Glowing Timeline Dot */}
             <div className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 transition-all duration-300 ${
               m.highlight 
-                ? 'bg-stone-900 border-white shadow-md scale-110' 
-                : 'bg-stone-400 border-white group-hover:bg-amber-600'
+                ? 'bg-cyan-500 border-slate-950 shadow-lg shadow-cyan-500/50 scale-110' 
+                : 'bg-slate-700 border-slate-950 group-hover:bg-violet-400'
             }`}></div>
 
             {/* Card Content */}
-            <div className="p-6 rounded-2xl bg-white border border-[#e2ddd0] hover:border-stone-400 shadow-xs transition-all duration-200">
+            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700/80 backdrop-blur-sm transition-all duration-200">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                <span className="text-xs font-mono font-bold text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded border border-amber-200">
+                <span className="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2.5 py-0.5 rounded border border-cyan-800/50 font-semibold">
                   {m.period}
                 </span>
                 {m.link && (
@@ -67,7 +67,7 @@ export default function CredentialsTimeline() {
                     href={m.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-bold text-rose-700 hover:text-rose-900 hover:underline"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-rose-400 hover:text-rose-300 hover:underline"
                   >
                     <span>{m.linkText}</span>
                     <ExternalLink className="w-3 h-3" />
@@ -75,22 +75,22 @@ export default function CredentialsTimeline() {
                 )}
               </div>
 
-              <h3 className="text-lg font-bold text-stone-900 mb-1">
+              <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
                 {m.title}
               </h3>
-              <div className="text-xs font-semibold text-stone-500 mb-3">
+              <div className="text-xs font-semibold text-slate-400 mb-3">
                 {m.subtitle}
               </div>
 
-              <p className="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
                 {m.description}
               </p>
 
-              <div className="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
+              <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60">
                 {m.tags.map(tag => (
                   <span
                     key={tag}
-                    className="px-2 py-0.5 rounded text-[10px] font-mono bg-stone-100 text-stone-700 border border-stone-200"
+                    className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700/50"
                   >
                     {tag}
                   </span>
