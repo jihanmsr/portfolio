@@ -39,7 +39,7 @@ import ArcadeGame from './ArcadeGame';
 
 export default function CanvasOS({ onExitToScroll }) {
   // Theme state
-  const [theme, setTheme] = useState('tokyo-night'); // 'cream' | 'catppuccin-latte' | 'tokyo-night' | 'dracula' | 'nord' | 'gruvbox-dark'
+  const [theme, setTheme] = useState('cream'); // 'cream' | 'catppuccin-latte' | 'tokyo-night' | 'dracula' | 'nord' | 'gruvbox-dark'
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [ambientPlaying, setAmbientPlaying] = useState(false);
   const [soundMenuOpen, setSoundMenuOpen] = useState(false);
@@ -504,12 +504,28 @@ export default function CanvasOS({ onExitToScroll }) {
             )}
           </div>
 
+          {/* Quick Theme Switcher Button */}
+          <button
+            onClick={() => {
+              sounds.playPop();
+              toggleWindow('themes');
+            }}
+            className="px-2.5 py-1.5 rounded-xl border text-xs font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center gap-1.5 shadow-xs"
+            style={{ borderColor: curTheme.cardBorder }}
+            title="Ubah Tema & Warna"
+          >
+            <Palette className="w-3.5 h-3.5 text-pink-500" />
+            <span className="hidden sm:inline">Ubah Tema</span>
+          </button>
+
           {/* Switch to Normal Scroll Site */}
           <button
             onClick={() => {
               sounds.playClick();
               if (typeof document !== 'undefined') {
-                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('dark');
+                document.body.style.backgroundColor = '#f5f3ec';
+                document.body.style.color = '#1c1917';
               }
               onExitToScroll();
             }}

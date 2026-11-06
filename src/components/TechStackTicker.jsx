@@ -121,20 +121,20 @@ export default function TechStackTicker() {
     <section className="relative z-10 py-16 px-6 max-w-6xl mx-auto" id="tech-stack">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-semibold tracking-wider uppercase mb-3">
-            <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200 border border-stone-300 text-stone-800 text-xs font-mono font-semibold tracking-wider uppercase mb-3">
+            <Cpu className="w-3.5 h-3.5 text-stone-700" />
             Bahasa Pemrograman & Alat Analisis
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-            Tech Stack & <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent">Bahasa yang Digunakan</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-stone-900 tracking-tight">
+            Tech Stack & Bahasa yang Digunakan
           </h2>
-          <p className="text-slate-400 mt-2 text-sm md:text-base max-w-xl">
+          <p className="text-stone-600 mt-2 text-sm md:text-base max-w-xl">
             Bahasa pemrograman dan ekosistem software yang saya gunakan untuk pemecahan masalah data, desain antarmuka, hingga otomasi sistem.
           </p>
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-900/80 border border-slate-800/80 backdrop-blur-md self-start md:self-auto overflow-x-auto max-w-full">
+        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white border border-[#e2ddd0] shadow-xs self-start md:self-auto overflow-x-auto max-w-full">
           {[
             { id: 'all', label: 'Semua (12)' },
             { id: 'data', label: 'Data & Statistik' },
@@ -146,8 +146,8 @@ export default function TechStackTicker() {
               onClick={() => setActiveFilter(f.id)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
                 activeFilter === f.id
-                  ? 'bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
+                  ? 'bg-stone-900 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
               }`}
             >
               {f.label}
@@ -161,35 +161,35 @@ export default function TechStackTicker() {
         {filtered.map((item) => (
           <div
             key={item.name}
-            className="group relative p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm hover:border-cyan-500/40 hover:bg-slate-900/90 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between"
+            className="group relative p-5 rounded-2xl bg-white border border-[#e2ddd0] shadow-xs hover:border-stone-400 hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl p-2 rounded-xl bg-slate-800/80 border border-slate-700/50 group-hover:scale-110 transition-transform">
+                  <span className="text-2xl p-2 rounded-xl bg-stone-50 border border-stone-200 group-hover:scale-110 transition-transform">
                     {item.icon}
                   </span>
                   <div>
-                    <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">
+                    <h3 className="text-base font-bold text-stone-900 group-hover:text-amber-800 transition-colors">
                       {item.name}
                     </h3>
-                    <span className="text-[11px] font-mono text-cyan-400/90 font-medium">
+                    <span className="text-[11px] font-mono text-stone-500 font-medium">
                       {item.level}
                     </span>
                   </div>
                 </div>
               </div>
 
-              <p className="text-slate-400 text-xs leading-relaxed mb-4">
+              <p className="text-stone-600 text-xs leading-relaxed mb-4">
                 {item.desc}
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60">
+            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-stone-100">
               {item.tags.map(tag => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700/50"
+                  className="px-2 py-0.5 rounded text-[10px] font-mono bg-stone-100 text-stone-700 border border-stone-200"
                 >
                   {tag}
                 </span>
