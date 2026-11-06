@@ -46,9 +46,9 @@ export default function App() {
           <nav className="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-300">
             <button
               onClick={() => setViewMode('canvas')}
-              className="text-amber-400 hover:text-amber-300 font-extrabold flex items-center gap-1.5 transition-colors"
+              className="text-cyan-400 hover:text-cyan-300 font-bold flex items-center gap-1.5 transition-colors group"
             >
-              <LayoutGrid className="w-3.5 h-3.5" />
+              <LayoutGrid className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
               <span>Canvas OS Mode</span>
             </button>
             <a href="#tech-stack" className="hover:text-cyan-400 transition-colors">Tech Stack</a>
@@ -61,7 +61,7 @@ export default function App() {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={() => setViewMode('canvas')}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition-all shadow"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 text-cyan-300 font-bold text-xs transition-all shadow-sm"
             >
               <LayoutGrid className="w-3.5 h-3.5" />
               <span>Buka Canvas OS</span>
@@ -94,9 +94,9 @@ export default function App() {
                 setMobileMenuOpen(false);
                 setViewMode('canvas');
               }}
-              className="w-full text-left py-2 px-3 rounded-lg bg-amber-400/10 border border-amber-400/30 text-amber-300 font-bold text-xs flex items-center gap-2"
+              className="w-full text-left py-2 px-3 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-bold text-xs flex items-center gap-2"
             >
-              <LayoutGrid className="w-4 h-4 text-amber-400" />
+              <LayoutGrid className="w-4 h-4 text-cyan-400" />
               <span>Buka Mode Interaktif Canvas OS</span>
             </button>
             <a href="#tech-stack" onClick={() => setMobileMenuOpen(false)} className="block text-slate-300 hover:text-cyan-400">Tech Stack</a>

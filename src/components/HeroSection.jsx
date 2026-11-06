@@ -37,10 +37,11 @@ export default function HeroSection({ onOpenCanvas }) {
         {onOpenCanvas && (
           <button
             onClick={onOpenCanvas}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400 hover:bg-amber-300 text-stone-950 text-xs font-extrabold shadow-md transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/15 via-indigo-500/15 to-purple-500/15 hover:from-cyan-500/25 hover:to-indigo-500/25 border border-cyan-500/40 hover:border-cyan-400 text-cyan-300 text-xs font-bold shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all hover:scale-105 backdrop-blur-md"
           >
-            <span>✨ Buka Mode Canvas OS Interaktif</span>
-            <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Mode Canvas OS Interaktif</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-cyan-400" />
           </button>
         )}
       </div>
@@ -137,20 +138,20 @@ export default function HeroSection({ onOpenCanvas }) {
 
       {/* Bento Stats Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-slate-800/80">
-        <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
-          <div className="text-2xl font-black text-cyan-400 font-mono">STIS '25</div>
+        <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm hover:border-cyan-500/30 transition-all">
+          <div className="text-2xl font-black text-white font-mono">STIS '25</div>
           <div className="text-xs text-slate-400 mt-1 font-medium">Komputasi Statistik & SI</div>
         </div>
-        <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
-          <div className="text-2xl font-black text-violet-400 font-mono">10+ Level</div>
+        <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm hover:border-cyan-500/30 transition-all">
+          <div className="text-2xl font-black text-white font-mono">10+ Level</div>
           <div className="text-xs text-slate-400 mt-1 font-medium">Kumon & Sempoa Tamat</div>
         </div>
-        <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
-          <div className="text-2xl font-black text-emerald-400 font-mono">End-to-End</div>
+        <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm hover:border-cyan-500/30 transition-all">
+          <div className="text-2xl font-black text-white font-mono">End-to-End</div>
           <div className="text-xs text-slate-400 mt-1 font-medium">Olah Data s.d Figma UI/UX</div>
         </div>
-        <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 backdrop-blur-sm">
-          <div className="text-2xl font-black text-amber-400 font-mono">100%</div>
+        <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm hover:border-cyan-500/30 transition-all">
+          <div className="text-2xl font-black text-white font-mono">100%</div>
           <div className="text-xs text-slate-400 mt-1 font-medium">Presisi Data & Metodologi</div>
         </div>
       </div>
